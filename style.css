@@ -1,0 +1,86 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+
+}
+body {
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+    background-image: radial-gradient( circle 1259px at 2.8% 48.8%,  rgba(255,243,110,1) 0%, rgba(30,204,214,1) 45.6%, rgba(5,54,154,1) 65.9% );
+}
+
+
+.tablecontainer {
+    padding: 30px;
+    background: linear-gradient( 99deg,  rgba(115,18,81,1) 10.6%, rgba(28,28,28,1) 118% );
+    border-radius: 10px;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    box-shadow: 0px 15px 5px rgba(0,0,0,0.8);
+    border: 1px solid black;
+    height: 50vh;
+    overflow: auto;
+}
+/* custom scrollbar */
+
+/* width */
+.tablecontainer::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  /* Track */ 
+  .tablecontainer::-webkit-scrollbar-track {
+    box-shadow: inset 1px 1px 5px black; 
+    border-radius: 10px;
+  }
+   
+  /* Handle */
+  .tablecontainer::-webkit-scrollbar-thumb {
+    background: lightcoral; 
+    border-radius: 10px;
+  }
+  
+  /* Handle on hover */
+  .tablecontainer::-webkit-scrollbar-thumb:hover {
+    background: #b30000; 
+  }
+
+
+/* end of custom scrollbar */
+
+
+.table {
+    border-style: groove;
+    border-collapse: collapse;
+    width: 50%;
+    height: 30vh;
+    border-radius: 30px;
+}
+.thead {
+    border-radius: 10px;
+}
+.thead th{
+    border-style: groove;
+    background: lightseagreen;
+    color: whitesmoke;
+    border: 1px solid black;
+    padding: 3px;
+}
+.tbody td{
+    border-style: groove;
+    text-align: center;
+    background: lightgoldenrodyellow;
+    border: 1px solid black;
+    color: black;
+    font-weight: bold;
+    padding: 10px;
+    overflow-wrap: break-word;
+}
+
+
+

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Practice</title>
+</head>
+<body>
+    <div class="tablecontainer">
+        <table class="table">
+            <thead class="thead">
+                <th>Name</th>
+                <th>Unit</th>
+                <th>Type</th>
+                <th>Value</th>
+            </thead>
+            <tbody class="tbody">
+               
+            </tbody>
+        </table>
+
+    </div>
+
+</div>
+
+
+
+
+
+
+
+<script>
+    
+    
+    
+    
+    
+    
+    function getData (method, resource) {
+        const request = new XMLHttpRequest
+
+        request.onload = () => {
+            if (request.status === 200) {
+                let data = JSON.parse(request.responseText)
+                editData(data)
+            }
+        }
+        request.open (method, resource)
+        request.send()
+    }
+
+    getData("GET", "https://api.coingecko.com/api/v3/exchange_rates");
+    
+     
+function editData(data) {
+    data = Object.values(data.rates)
+    const tablebody = document.querySelector(".tbody")
+    console.log(data)
+    for(let i = 0; i <= data.length; i++) {
+        const tablerow = document.createElement("tr")
+        // console.log(tabledata.innerText)
+        tablerow.innerHTML = 
+        `
+        <td>${data[i].name}</td>
+        <td>${data[i].unit}</td>
+        <td>${data[i].type}</td>
+        <td>${data[i].value} ${data[i].unit}</td>
+      `
+        tablebody.appendChild(tablerow)
+    }
+     
+    
+}
+        
+  
+          
+
+
+</script>
+</body>
+</html>
+
+
+
+
+
+
+<!--     // for (const rows in bpi) {
+
+        //     const ul = document.createElement("div")
+        //     const list = document.querySelector(".list");
+        //     ul.setAttribute("class", "currencyNames")
+            
+        //     ul.textContent = `${rows}`;
+            
+        //     list.appendChild(ul);
+        //     // Currencies
+         
+        // } -->
